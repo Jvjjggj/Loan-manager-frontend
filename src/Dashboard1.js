@@ -57,6 +57,7 @@ const Sidebar = () => (
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [userRole, setUserRole] = useState("Verifier"); // Added state for user role
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
@@ -78,6 +79,7 @@ const Header = () => {
 
   const handleNavigation = (role) => {
     setIsDropdownOpen(false);
+    setUserRole(role); // Update user role
     switch (role) {
       case 'User':
         navigate('/user-dashboard');
@@ -106,7 +108,7 @@ const Header = () => {
           <div className="user-icon">
             <User size={16} />
           </div>
-          <span className="user-name1">Verifier</span>
+          <span className="user-name1">{userRole}</span> {/* Display current role */}
           <span className="dropdown-arrow">{isDropdownOpen ? '▲' : '▼'}</span>
 
           {isDropdownOpen && (
@@ -127,10 +129,10 @@ const Header = () => {
 const LoanApplicationsPage = () => {
   const [loanCount, setLoanCount] = useState(0);
   const [borrowerCount] = useState(100);
-  const [cashDisbursed] = useState(550000);
-  const [savings] = useState(450000);
-  const [repaidLoans] = useState(30);
-  const [cashReceived] = useState(1000000);
+  const [cashDisbursed, ] = useState(550000);
+  const [savings, ] = useState(450000);
+  const [repaidLoans, ] = useState(30);
+  const [cashReceived, ] = useState(1000000);
   const [applications, setApplications] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

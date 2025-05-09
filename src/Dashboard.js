@@ -325,7 +325,7 @@ const LoanApplicationsPage = () => {
           </div>
 
           <div className="overview-card disbursed-card">
-            <DollarSign size={48} color="#fff" />
+            <img src="https://res.cloudinary.com/dvjjouwki/image/upload/v1746809002/cash-multiple_bszjwd.png" alt="Loans Icon" style={{ width: '48px', height: '48px' }} />
             <div className="card-info">
               <div className="count">
                 {loading ? 'Loading...' : error ? 'Error' : cashDisbursed}
@@ -355,7 +355,7 @@ const LoanApplicationsPage = () => {
           </div>
 
           <div className="overview-card received-card">
-            <DollarSign size={48} color="#fff" />
+            <img src="https://res.cloudinary.com/dvjjouwki/image/upload/v1746809143/tabler_currency-naira_sdeivr.png" alt="Loans Icon" style={{ width: '48px', height: '48px' }} />
             <div className="card-info">
               <div className="count">
                 {loading ? 'Loading...' : error ? 'Error' : cashReceived}
