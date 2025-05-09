@@ -1,0 +1,305 @@
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #0e3d2c;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 1rem;
+  z-index: 98;
+
+}
+
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.avatar {
+  font-size: 2rem;
+  background-color: #1b5e3c;
+  border-radius: 50%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.username {
+  font-weight: bold;
+  color: #b6ffb6;
+  font-size: 1rem;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-menu li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 0.95rem;
+}
+
+.sidebar-menu li:hover {
+  background-color: #146b48;
+}
+
+/* Header */
+.header {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  border-bottom: 1px solid #ddd;
+  position: fixed;
+  top: 0;
+  left: 220px;
+  right: 0;
+  z-index: 99;
+  background-color: #f0f0f0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0e3d2c;
+}
+
+.menu-button {
+  display: none;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  font-size: 1.2rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.user-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+.user-name1 {
+  font-size: 0.9rem;
+  color: black;
+}
+
+.user-name {
+  font-size: 0.9rem;
+  color: white;
+}
+
+.dropdown-arrow {
+  font-size: 0.7rem;
+  color: #555;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  min-width: 100px;
+}
+
+.dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown li {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #333;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dropdown li:hover {
+  background-color: #f0f0f0;
+}
+
+.main-content {
+  margin-left: 220px;
+  margin-top: 60px;
+  padding: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-button {
+    display: block;
+  }
+
+  .header {
+    left: 0;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+
+#l{
+  color: black;
+}
+
+/* Dashboard Overview */
+.dashboard-overview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.overview-card {
+  background-color: #1b5e3c;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: calc(32% - 1rem); /* 3 cards per row with spacing */
+  min-width: 250px; /* Ensure cards don't get too small */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.overview-card.loans-card {
+  /* */
+}
+
+.overview-card img { /* Add this style for the image */
+  width: 48px;
+  height: 48px;
+}
+
+.overview-card svg {
+  width: 48px;
+  height: 48px;
+}
+
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.count {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.label {
+  font-size: 1.1rem;
+  color: #b6ffb6;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .dashboard-overview {
+    flex-direction: column;
+  }
+
+  .overview-card {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 1200px) {
+  .overview-card {
+    width: calc(50% - 1rem); /* 2 cards per row on medium screens */
+  }
+}
+
+.loan-applications-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.loan-applications-table thead th {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+  font-weight: bold;
+  color: #333;
+}
+
+.loan-applications-table tbody td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  color: #555;
+}
+
+.loan-applications-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.pending {
+    color: #FEC400;
+}
+
+.rejected{
+    color: #CC2929;
+}
+
+.approved {
+  color: green; /* I've used green for 'success', assuming that's the intended color */
+}
