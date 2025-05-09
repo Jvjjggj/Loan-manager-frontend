@@ -28,32 +28,40 @@ import axios from 'axios';
 import './Dashboard.css';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from 'recharts';
 
-const Sidebar = () => (
-  <div className="sidebar">
-    <div className="sidebar-header">
+const Sidebar = () => {
+    const navigate = useNavigate();
 
-      <div className="user-name" color='white'>John Okoh</div>
+    const handleSignOut = () => {
+        navigate('/'); // Navigate to the home path
+    };
+
+  return (
+    <div className="sidebar">
+      <div className="sidebar-header">
+
+        <div className="user-name" color='white'>John Okoh</div>
+      </div>
+      <ul className="sidebar-menu">
+        <li><Home /> Dashboard</li>
+        <li><Users /> Borrowers</li>
+        <li><DollarSign /> Loans</li>
+        <li><Repeat /> Repayments</li>
+        <li><Sliders /> Loan Parameters</li>
+        <li><PieChart /> Accounting</li>
+        <li><FileText /> Reports</li>
+        <li><Clipboard /> Collateral</li>
+        <li><Users /> Access Configuration</li>
+        <li><PiggyBank /> Savings</li>
+        <li><Layers /> Expenses</li>
+        <li><PenTool /> E-signature</li>
+        <li><Briefcase /> Investor Accounts</li>
+        <li><Calendar /> Calendar</li>
+        <li><Settings /> Settings</li>
+        <li onClick={handleSignOut}><LogOut /> Sign Out</li>
+      </ul>
     </div>
-    <ul className="sidebar-menu">
-      <li><Home /> Dashboard</li>
-      <li><Users /> Borrowers</li>
-      <li><DollarSign /> Loans</li>
-      <li><Repeat /> Repayments</li>
-      <li><Sliders /> Loan Parameters</li>
-      <li><PieChart /> Accounting</li>
-      <li><FileText /> Reports</li>
-      <li><Clipboard /> Collateral</li>
-      <li><Users /> Access Configuration</li>
-      <li><PiggyBank /> Savings</li>
-      <li><Layers /> Expenses</li>
-      <li><PenTool /> E-signature</li>
-      <li><Briefcase /> Investor Accounts</li>
-      <li><Calendar /> Calendar</li>
-      <li><Settings /> Settings</li>
-      <li><LogOut /> Sign Out</li>
-    </ul>
-  </div>
-);
+  );
+};
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -80,6 +88,7 @@ const Header = () => {
   const handleNavigation = (role) => {
     setIsDropdownOpen(false);
     setUserRole(role); // Update user role
+    console.log(role)
     switch (role) {
       case 'User':
         navigate('/user-dashboard');
@@ -275,10 +284,10 @@ const LoanApplicationsPage = () => {
       alert('Failed to update loan status. Please try again.');
       // Revert to the original status (optional, if you want to maintain data integrity)
       // setApplications(prevApplications => {
-      //   const originalApplication = savedApplications.current.find(app => app._id === id);
-      //   return prevApplications.map(app =>
-      //     app._id === id ? { ...app, status: originalApplication.status } : app
-      //   );
+      //   const originalApplication = savedApplications.current.find(app => app._id === id);
+      //   return prevApplications.map(app =>
+      //     app._id === id ? { ...app, status: originalApplication.status } : app
+      //   );
       // });
     }
   }, []);
@@ -315,6 +324,7 @@ const LoanApplicationsPage = () => {
               <div className="label">Active Users</div>
             </div>
           </div>
+
 
 
           
