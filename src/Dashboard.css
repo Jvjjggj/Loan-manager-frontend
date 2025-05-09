@@ -8,7 +8,7 @@
   left: 0;
   padding-top: 1rem;
   z-index: 98;
-
+  overflow-y: auto;
 }
 
 .sidebar-header {
